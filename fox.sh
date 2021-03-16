@@ -40,21 +40,10 @@ while [ TRUE ] ; do
 			echo -n Unkeying radio
 			echo "0" | sudo tee /sys/class/gpio/gpio17/value
 
-		elif [[ "$line" == sayf* ]] ; then		# Unkey command
-			SAY=$(echo $line | cut -c5-)
-			echo $SAY
-			pico2wave -w /tmp/audio.wav "$SAY"
-			play -v .25 /tmp/audio.wav > /dev/null 2>&1
-
 		elif [[ "$line" == sayfile* ]] ; then		# Say file command
 			FILE=$(echo $line | cut -c8-)
 			echo $FILE
 			cat $FILE | festival --tts
-
-		elif [[ "$line" == saycmd* ]] ; then		# Say file command
-			CMD=$(echo $line | cut -c8-)
-			echo $CMD
-			eval $CMD | festival --tts
 
 		elif [[ "$line" == sayfcmd* ]] ; then		# Say file command
 			CMD=$(echo $line | cut -c8-)
@@ -63,6 +52,17 @@ while [ TRUE ] ; do
 			echo $SAY
 			pico2wave -w /tmp/audio.wav "$SAY"
 			play -v .25 /tmp/audio.wav > /dev/null 2>&1
+
+		elif [[ "$line" == sayf* ]] ; then		# Unkey command
+			SAY=$(echo $line | cut -c5-)
+			echo $SAY
+			pico2wave -w /tmp/audio.wav "$SAY"
+			play -v .25 /tmp/audio.wav > /dev/null 2>&1
+
+		elif [[ "$line" == saycmd* ]] ; then		# Say file command
+			CMD=$(echo $line | cut -c8-)
+			echo $CMD
+			eval $CMD | festival --tts
 
 		elif [[ "$line" == say* ]] ; then		# Say command
 			SAY=$(echo $line | cut -c4-)
