@@ -1,0 +1,72 @@
+# valid commands:
+# key
+# unkey
+# xxxxx.mp3 (give just filename to play audio file)
+# say [text]
+
+key
+say The core temperature is
+saycmd /opt/vc/bin/vcgencmd measure_temp | cut -d'=' -f2
+saycmd /usr/local/bin/read_voltage.py
+unkey
+
+wait 60
+
+key
+say  beep boop boop. This is, the little fox in a box. I'm stuck. Please come find me. I don't know where I'm at. My creator, K-E-5-G-D-B, did not hook up my G-P-S. I'm lost. I need help. Hurry up and find me!
+unkey
+
+# Wait
+wait 210
+
+key
+click.mp3
+click.mp3
+click.mp3
+unkey
+
+wait 210
+
+key
+say The core temperature is
+saycmd /opt/vc/bin/vcgencmd measure_temp | cut -d'=' -f2
+saycmd /usr/local/bin/read_voltage.py
+unkey
+
+wait 180
+
+key
+say beep beep boop boop. This is the lil' fox. Are you getting close yet? I'm getting bored. You're slow. You should have found me by now. Please come and find me already.
+unkey
+
+wait 150
+
+key
+click.mp3
+click.mp3
+click.mp3
+unkey
+
+wait 150
+
+key
+say The core temperature is
+saycmd /opt/vc/bin/vcgencmd measure_temp | cut -d'=' -f2
+saycmd /usr/local/bin/read_voltage.py
+unkey
+
+wait 30
+
+key
+say Hello ... Hello ... Is anybody out there? Will I ever be found? I'm getting lonely. Please hurry up. My batteries are getting weak, and I don't know how much longer I can keep talking. Help meeeeeee
+unkey
+
+wait 150
+
+key
+click.mp3
+click.mp3
+click.mp3
+unkey
+
+wait 150
